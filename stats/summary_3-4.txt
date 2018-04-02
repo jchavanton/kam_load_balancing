@@ -1,0 +1,46 @@
+
+LBOFF3
+Total 50000 INVITE calls sent in 83263 ms at rate of 600/sec
+Total 50000 responses received in 83766 ms at rate of 596/sec:
+
+Detailed responses received:
+ - 200 responses:    49663     (OK)
+ - 408 responses:      337     (Request Timeout)
+                    ------
+ TOTAL responses:    50000 (rate=596/sec)
+
+LBOFF4
+Total 50000 INVITE calls sent in 83248 ms at rate of 600/sec
+Total 50000 responses received in 83751 ms at rate of 597/sec:
+
+Detailed responses received:
+ - 200 responses:    49749     (OK)
+ - 408 responses:      251     (Request Timeout)
+                    ------
+ TOTAL responses:    50000 (rate=597/sec)
+
+Maximum outstanding job: 1009
+
+
+LBON3
+Total 50000 INVITE calls sent in 83242 ms at rate of 600/sec
+Total 50000 responses received in 83746 ms at rate of 597/sec:
+
+Detailed responses received:
+ - 200 responses:    50000     (OK)
+                    ------
+ TOTAL responses:    50000 (rate=597/sec)
+
+Maximum outstanding job: 822
+
+LBON4
+Total 50000 INVITE calls sent in 83255 ms at rate of 600/sec
+Total 50000 responses received in 83758 ms at rate of 596/sec:
+
+Detailed responses received:
+ - 200 responses:    50000     (OK)
+                    ------
+ TOTAL responses:    50000 (rate=596/sec)
+
+Maximum outstanding job: 702
+
