@@ -9,7 +9,7 @@ relative weight based load distribution with congestion detection
 
 ### Congestion detection is done using average AVG (normal gateway latency) and EWMA EST (current gateway latency estimator)
 
-congestion_ms : The estimated congestion in ms is EST - AVG
+congestion_ms : The estimated congestion in ms is EST - AVG and always >= 0
 
 #### The reactivity when facing congestion can be tuned using the EWMA alpha
 A larger alpha will result in an estimator with a longer memory and slower reaction time  
