@@ -30,7 +30,7 @@ tmux split-window -v
 
 # start voip-perf client
 tmux select-pane -t 3
-tmux send-keys "cd /git/voip_perf/ && sleep 10 && ./client_1.sh <kamailio IP>:5060 5069 50000" C-m
+tmux send-keys "cd /git/voip_perf/ && sleep 10 && ./client_new.sh 255.255.255.255:5060 5069 50000 400" C-m
 
 # Set default window
 tmux select-window -t $SESSION:3

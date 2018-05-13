@@ -43,13 +43,16 @@ A [voip_perf](https://github.com/jchavanton/voip_perf)  user agent is generating
 * GW 4 : is performaning normaly [shell script](https://github.com/jchavanton/kam_load_balancing/blob/master/scenario/server1.sh) 
 
 
-
 type|test#|AVG180_S|AVG200_S|TIMEOUT|RECEIVED
 ----|-----|--------|--------|-------|--------
 lb off|3|0.135|1.728|251|49749
 lb off|4|0.038|0.953|337|49663
 lb on (congestion detection)|3|0.080|0.980|0|50000
 lb on (congestion detection)|4|0.011|0.915|0|50000
+lb off (test_yul2.ods)|5|157|688|0|50000
+lb on (congestion detection)|5|149|660|0|50000
+lb off (test_yul.ods)|6|179|709|216|49784
+lb on (congestion detection) |6|147|662|0|50000
 
 [voip_perf result files](https://github.com/jchavanton/kam_load_balancing/tree/master/stats)
 
