@@ -1,5 +1,5 @@
 
-## about kam_load_balancing repository
+## about kamamilio_load_balancing repository
 
 This repository was created to document the work made on an new algorithm for Kamailio dispatcher module
 as well as the tools used and some test results 
@@ -9,7 +9,7 @@ relative weight based load distribution with congestion detection
 
 ### Congestion detection is done using average AVG (normal gateway latency) and EWMA EST (current gateway latency estimator)
 
-congestion_ms : The estimated congestion in ms is EST - AVG
+congestion_ms : The estimated congestion in ms is EST - AVG and always >= 0
 
 #### The reactivity when facing congestion can be tuned using the EWMA alpha
 A larger alpha will result in an estimator with a longer memory and slower reaction time  
@@ -21,7 +21,8 @@ modparam("dispatcher", "ds_latency_estimator_alpha", 900)
 
 #### The load sent to a gateway is lowered by one point of weight for every congestion_ms
 
-In this example the GW wills support up to 50ms of estimated congestion
+In this example the GW wills support up to 50ms of estimated congestion, therefore 50 is also the Cut-Off value.
+However, the GW will still be used if all the other GWs are also above their congestion threshold, in such case, load distribution will now be based on the ratio of congestion_ms each GW is facing.
 
 ```
 INSERT INTO "dispatcher" VALUES(1,1,'sip:1.1.1.1:5072',0,12,'weight=50;rweight=50','');
@@ -30,7 +31,7 @@ INSERT INTO "dispatcher" VALUES(3,1,'sip:2.2.2.2:5072',0,12,'weight=50;rweight=5
 INSERT INTO "dispatcher" VALUES(4,1,'sip:2.2.2.2:5073',0,12,'weight=50;rweight=50','');
 ```
 
-The GW will still be used if all the other GWs are also above their congestion threshold, in such case, load distribution will now be based on the ratio of congestion_ms each GW is facing
+
 
 ## Test result example 
 [spreadsheet](https://github.com/jchavanton/kam_load_balancing/blob/master/A-B.ods)
